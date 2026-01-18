@@ -34,6 +34,7 @@ export const components = {
 > 更多疑难问题请参照 Umineko Project 的 [FAQ 页面](https://www.umineko-project.org/en/frequently-asked-questions/) 或 [已知问题页面](https://www.umineko-project.org/en/known-issues/)。
 
 ### 游戏贴士
+
 <Accordion>
 <AccordionItem title="如何操作">
 - **键盘与鼠标：**
@@ -85,33 +86,80 @@ export const components = {
     </table>
 
 - **游戏手柄：**
+
     - **支持手柄：**游戏原生支持 **DualShock 3/4、Steam Controller** 和 **FuSa 手柄**。
+
     - **其他手柄：**需要手动配置按键映射。请在 `ons.cfg` 配置文件中加入 `pad-map` 代码。
+
     - **Xbox 手柄参考代码：**
+
         ```ini
         pad-map=3,1,0,2,8,4,18,19,20,21,9,-1,-1,-1,-1,5,-1,-1
         ```
+
         映射：`返回, 确认, 取消, 菜单, 自动, 快进, 下, 左, 上, 右, 静音, 未知, 未知, 未知, 按住快进, 未知, 未知`
 
     - **自定义方法：**
+
         1. 在 `ons.cfg` 配置文件中加入 `use-consolehelp/help_read4` 和 `debug` 两行。
+
         2. 启动游戏，此时会弹出控制台窗口。
+
         3. 在游戏内按下手柄按键，控制台会显示对应的按键数字。
+
         4. 按照映射顺序，将记录下的数字填入 `pad-map=` 的等号后（使用 `-1` 代表不映射该按键）。
 </AccordionItem>
 
 <AccordionItem title="查看注释">
 - 当游戏中出现绿色文本时，表示该词条拥有注释。
+
     ![](@assets/pages/help/help_read1.webp)
+
 - 此时，可以打开游戏菜单（PC 端为鼠标右键），点击左上角的“TIPS”按钮，进入“情报录”界面。
+
     ![](@assets/pages/help/help_read2.webp)
+
 - 接着，点击左下角的“切换为魔导书”，即可查阅相关注释。部分条目包含多条注释，可上下滚动查看。
 </AccordionItem>
 
 <AccordionItem title="查看彩蛋">
 - 游戏中存在部分由制作组制作的隐藏内容，仅提供两条线索供诸位探索：
+
     1. 若想要初探隐秘之境，首先需要提高“版权保护”意识。
+
     2. 若想要在与魔女的战斗中取胜，必须先得到黄金的真实。
+</AccordionItem>
+
+<AccordionItem title="存档文件的路径">
+- **Windows Vista 或更高版本：**
+
+    -   `%SYSTEMDRIVE%:\ProgramData\ONScripter-RU\UminekoPS3Fication**\`
+
+- **Windows XP：**
+
+    - `%SYSTEMDRIVE%:\Documents and Settings\All Users\Application Data\ONScripter-RU\UminekoPS3Fication**\`
+
+- **Windows 平台下启用 iCloud Drive App 情况下：**
+
+    - `iCloud Drive\ONScripter-RU\UminekoPS3Fication**\`
+
+- **macOS (10.7 或更高版本，iCloud)：**
+
+    - `~/Library/Mobile Documents/com-apple-CloudDocs/ONScripter-RU/UminekoPS3Fication**/`
+
+- **macOS (10.6 版本)：**
+
+    - `~/Library/Application Support/ONScripter-RU/UminekoPS3Fication**/`
+
+- **Linux：**
+
+    - `~/.onscripter/UminekoPS3Fication**/`
+
+- **注意：**
+
+    - 不同版本的游戏（简体中文、繁体中文、英文、俄文版等）之间存档不共享。
+
+    - 如需停止使用 iCloud，请在 `ons.cfg` 配置文件中另起一行，加入 `disable-icloud`。
 </AccordionItem>
 
 <AccordionItem title="配置文件与命令行指令">
@@ -149,11 +197,13 @@ export const components = {
     | `env[verify]` | quick/full/once/none | 文件验证模式<br/>*需要 v5.1b 或更新版本* |
 
 - **查看所有可用参数：**
+
     ```bash
     ./onscripter-ru --help
     ```
 
 - **配置示例：**
+
     ```ini
     # 在 `ons.cfg` 配置文件中设置
     env[force_game]=chiru
@@ -167,54 +217,74 @@ export const components = {
 </AccordionItem>
 </Accordion>
 
-### 常见问题：安装
+### 常见问题
+
 <Accordion>
-<AccordionItem title="解压失败怎么办？">
+<AccordionItem title="解压失败">
 - 若解压出错，通常是软件版本过旧或下载损坏。
+
     - 请使用 [7-Zip](https://www.7-zip.org/download.html)、[PeaZip](https://peazip.github.io/)、[WinRAR](https://www.rarlab.com/download.htm) 等常用压缩软件。
+
     - 请核对分包的 **SHA1 校验码**（在“1. 完整游戏”文件夹内的 `SHA1.txt` 中查看）。若不一致需重新下载该分包。
 </AccordionItem>
 
-<AccordionItem title="启动器更新失败怎么办？">
+<AccordionItem title="启动器更新失败">
 - **Windows 7 更新失败：**
+
     - Windows 7 用户如果更新失败并提示 `System.IO.FileNotFoundException`，通常是因为缺少必要的系统组件。请下载安装 **[.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-offline-installer)**。
 
 - **其他情况更新失败：**
+
     - 也可从“下载链接”的“**更新下载**”中，分别下载“脚本”与“资源包”，自行解压到游戏目录。
 </AccordionItem>
-</Accordion>
 
-### 常见问题：游戏
-<Accordion>
-<AccordionItem title="游戏画面显示异常或显示不全怎么办？">
+<AccordionItem title="游戏显示问题">
 - **PC 平台：**
+
     - **显示异常：**可能是因为显卡驱动程序已过时。本游戏引擎使用 OpenGL，过时的驱动可能导致问题。请尝试更新显卡驱动。
+
     - **显示不全：**可能是系统缩放导致的。请右键点击游戏主程序 `onscripter-ru.exe`，在“属性”→“兼容性”中，将高 DPI 缩放设置更改为“应用程序”。
 
 - **Android 平台：**
+
     - **显示异常：**某些设备需要在 `ons.cfg` 配置文件中添加 `render-self=no` 以修复画面异常。
+
     - **显示不全：**需要将游戏主程序（.apk）更新到 r3569 或更高版本，并在 `ons.cfg` 配置文件中指定用于将游戏画面左移的手动屏幕偏移量。例如，对于屏幕分辨率为 2400x1080 的 Redmi Note 9 Pro，应添加 `system-offset-x=180`。
 </AccordionItem>
 
-<AccordionItem title="游戏没有声音怎么办？">
+<AccordionItem title="游戏没有声音">
 - **检查静音状态：**查看游戏窗口标题栏是否显示 `[Sound: Off]`。如果是，请按下 <Kbd>Alt</Kbd>+<Kbd>M</Kbd> 取消静音。
+
 - **检查角色语音：**进入游戏的环境设置（第三页），确保所有角色的语音都已开启。
+
 - **修改音频设置：**如果上述方法无效，请尝试修改 `ons.cfg` 配置文件：
+
     - 添加 `audioformat=VALUE`，`VALUE` 可尝试 `s16` 或 `s32`。
+
     - 或者添加 `audiodriver=VALUE`，`VALUE` 可尝试 `directsound` 或 `wasapi`。
+
 - **兼容性问题：**如果所有方法都无效，则可能是引擎与你的设备存在兼容性问题，暂时无法解决。
 </AccordionItem>
 
-<AccordionItem title="如何调整游戏内的字体大小？">
+<AccordionItem title="游戏内字体过大">
 - 可以在 `ons.cfg` 配置文件中加入 `font-multiplier` 代码来缩放字体。将代码中所有的 `0.9` 替换为你希望的缩放比例。
+
     - **注意：**此功能可能导致字体在极少数情况下出现显示不稳定的问题。请谨慎使用。
+
 - **代码示例（缩放为 0.9 倍）：**
+
   ```ini
   font-multiplier=b1:0.9,b2:0.9,b3:0.9,b4:0.9,b5:0.9,b6:0.9,b7:0.9,p0:6:0.9,p1:1:0.9,p1:2:0.9,p1:3:0.9,p1:4:0.9,p1:5:0.9,p1:7:0.9,p2:1:0.9,p2:2:0.9,p2:3:0.9,p2:4:0.9,p2:5:0.9,p2:7:0.9,p41:1:0.9,p41:2:0.9,p41:3:0.9,p41:4:0.9,p41:5:0.9,p41:7:0.9,p42:1:0.9,p42:2:0.9,p42:3:0.9,p42:4:0.9,p42:5:0.9,p42:7:0.9
   ```
 </AccordionItem>
 
-<AccordionItem title="Android 平台游戏很卡怎么办？">
+<AccordionItem title="存档、读档时出现问题">
+- 可以尝试在游戏的环境设置中选择“初始化游戏”来重置状态。如果问题依旧，可以手动删除存档文件夹来彻底解决。
+
+    - **注意：**这将删除所有存档，操作前请先备份。
+</AccordionItem>
+
+<AccordionItem title="Android 平台运行卡顿">
 - 目前存在多种可能影响性能的问题，因此建议仔细配置以下选项：
 
     - **选择渲染器：**默认情况下，ONScripter-RU 使用 **OpenGL ES 2.0** 渲染器。如果初始化失败，或者 `ons.cfg` 配置文件中存在 `renderer-blacklist=GLES2` 这行设置，则会回退到 **OpenGL ES 3.0** 渲染器。某些设备可能不支持 OpenGL ES 3.0，但启用它可能会带来稍好的性能。
@@ -229,48 +299,23 @@ export const components = {
 </AccordionItem>
 </Accordion>
 
-### 常见问题：存档
-<Accordion>
-<AccordionItem title="存档、读档时出现问题怎么办？">
-- 可以尝试在游戏的环境设置中选择“初始化游戏”来重置状态。如果问题依旧，可以手动删除存档文件夹来彻底解决。
-    - **注意：**这将删除所有存档，操作前请先备份。
-</AccordionItem>
-
-<AccordionItem title="存档文件的路径在哪里？">
-- **Windows Vista 或更高版本：**
-    -   `%SYSTEMDRIVE%:\ProgramData\ONScripter-RU\UminekoPS3Fication**\`
-- **Windows XP：**
-    - `%SYSTEMDRIVE%:\Documents and Settings\All Users\Application Data\ONScripter-RU\UminekoPS3Fication**\`
-- **Windows 平台下启用 iCloud Drive App 情况下：**
-    - `iCloud Drive\ONScripter-RU\UminekoPS3Fication**\`
-- **macOS (10.7 或更高版本，iCloud)：**
-    - `~/Library/Mobile Documents/com-apple-CloudDocs/ONScripter-RU/UminekoPS3Fication**/`
-- **macOS (10.6 版本)：**
-    - `~/Library/Application Support/ONScripter-RU/UminekoPS3Fication**/`
-- **Linux：**
-    - `~/.onscripter/UminekoPS3Fication**/`
-- **禁用 iCloud 同步：**
-    - 如需停止使用，请在 `ons.cfg` 配置文件中另起一行，加入 `disable-icloud`。
-</AccordionItem>
-
-<AccordionItem title="不同语言之间共享存档吗？">
-- **不共享。**不同版本的游戏（简体中文、繁体中文、英文、俄文版）拥有独立的存档和设置。
-</AccordionItem>
-</Accordion>
-
 ## NS 版汉化补丁帮助
 
 ### 游戏贴士
+
 <Accordion>
 <AccordionItem title="如何操作">
-- 在标题界面或系统菜单选择“Manual”，可以打开说明书，在“操作方式”页查看游戏键位。  
+- 在标题界面或系统菜单选择“Manual”，可以打开说明书，在“操作方式”页查看游戏键位。
     - 若使用模拟器游玩，可以在模拟器的设置界面查看键位映射。
+
     ![](@assets/pages/help/help_read3.webp)
 </AccordionItem>
 
 <AccordionItem title="跳过正篇">
 - 如果已经游玩过《海猫》的正篇剧本（EP1-8），可以在剧本选择界面按“+”键，解锁所有正篇剧本，直接开始阅读番外剧本。
+
     - 如果是初次游玩，不推荐直接解锁。
+
     ![](@assets/pages/help/help_read4.webp)
 </AccordionItem>
 </Accordion>
