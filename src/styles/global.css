@@ -65,3 +65,9 @@ html {
 @view-transition {
   navigation: auto;
 }
+
+.prose ul,
+.prose ol,
+.prose blockquote {
+  margin-left: 1.2em;
+}
