@@ -31,8 +31,6 @@ export const components = {
 
 ## PS3 版移植版帮助
 
-> 更多疑难问题请参照 Umineko Project 的 [FAQ 页面](https://www.umineko-project.org/en/frequently-asked-questions/) 或 [已知问题页面](https://www.umineko-project.org/en/known-issues/)。
-
 ### 游戏贴士
 
 #### 如何操作
@@ -276,6 +274,11 @@ export const components = {
     - **帧率限制：**你可以通过将游戏帧率限制在低于 60 帧/秒的值来改善性能并显著降低功耗。请在 `ons.cfg` 配置文件中添加 `force-fps=30`，其中 30 是你期望的帧率值。你还可以额外添加 `force-vsync` 来启用旧式垂直同步，但这不太可能带来明显益处。不设置帧率限制可能导致在某些硬件上的部分场景中出现黑条等渲染异常。
 
     - **纹理尺寸限制：**通过将支持的纹理尺寸限制设置为低于设备本身支持的值，你可能会在某些场景中获得稍好的性能。请在 `ons.cfg` 配置文件中添加 `texlimit=4096`，其中 4096 是以像素为单位的 2 的幂次方值。
+
+#### Linux 发行版不受支持
+
+- 游戏在 **Wine** 环境下可以完美运行（经测试，Wine 1.7.21 下运行正常）。
+- 建议使用 Wine 的 **1.6 分支或更新的最新版本**。
 
 ## NS 版汉化补丁帮助
 
