@@ -58,10 +58,45 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
   padding-inline: 2rem;
 }
 
-@view-transition {
-  navigation: auto;
+@utility prose {
+  h2 {
+    @apply px-8 py-4 tracking-wider;
+    @apply text-primary-content rounded-xl shadow-md;
+    @apply from-primary to-primary/60 bg-linear-to-r;
+  }
+
+  h3 {
+    @apply px-8 py-2 text-lg;
+    @apply text-base-content rounded-xl shadow-md;
+    @apply from-base-200 to-base-200/60 bg-linear-to-r;
+  }
+
+  h4 {
+    @apply text-accent flex items-center p-1 text-lg;
+    @apply before:iconify before:tabler--label-important-filled;
+    @apply before:mr-2 before:text-xl;
+  }
+
+  h4 ~ h4 {
+    @apply border-t border-white/20 pt-6;
+  }
+
+  blockquote {
+    @apply relative border-none;
+    @apply font-serif not-italic;
+  }
+
+  blockquote::before {
+    content: "";
+    @apply absolute inset-y-0.5 left-0 w-1;
+    @apply bg-primary rounded-md;
+  }
+
+  blockquote p {
+    @apply before:content-none after:content-none;
+  }
 }
 
-hr {
-  @apply my-4 border-t border-white/20;
+@view-transition {
+  navigation: auto;
 }
