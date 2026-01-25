@@ -6,13 +6,6 @@ import Icon from '@components/Icon.astro';
 import Kbd from "@components/Kbd.astro"
 import Accordion from "@components/Accordion.astro"
 import AccordionItem from "@components/AccordionItem.astro"
-import Heading from "@components/Heading.astro"
-export const components = {
-    h2: (props) => <Heading {...props} tag="h2" />,
-    h3: (props) => <Heading {...props} tag="h3" />,
-    h4: (props) => <Heading {...props} tag="h4" />,
-    blockquote: (props) => <Heading {...props} tag="blockquote" />,
-};
 
 ## 版本对比
 - PS3 版移植版与 NS 版汉化补丁对比如下：
@@ -87,7 +80,6 @@ export const components = {
         4. 按照映射顺序，将记录下的数字填入 `pad-map=` 的等号后（使用 `-1` 代表不映射该按键）。
 </div>
 
-****
 #### 查看注释
 
 - 当游戏中出现绿色文本时，表示该词条拥有注释。
@@ -100,7 +92,6 @@ export const components = {
 
 - 接着，点击左下角的“切换为魔导书”，即可查阅相关注释。部分条目包含多条注释，可上下滚动查看。
 
-****
 #### 查看彩蛋
 
 - 游戏中存在部分由制作组制作的隐藏内容，仅提供两条线索供诸位探索：
@@ -109,7 +100,6 @@ export const components = {
 
     2. 若想要在与魔女的战斗中取胜，必须先得到黄金的真实。
 
-****
 #### 存档文件的路径
 
 - **Windows Vista 或更高版本：**
@@ -144,7 +134,6 @@ export const components = {
 
     - 如需停止使用 iCloud，请在 `ons.cfg` 配置文件中另起一行，加入 `disable-icloud`。
 
-****
 #### 配置文件与命令行指令
 
 - **常用参数一览：**
@@ -211,7 +200,6 @@ export const components = {
 
     - 请核对分包的 **SHA1 校验码**（在“1. 完整游戏”文件夹内的 `SHA1.txt` 中查看）。若不一致需重新下载该分包。
 
-****
 #### 启动器更新失败
 
 - **Windows 7 更新失败：**
@@ -222,7 +210,6 @@ export const components = {
 
     - 也可从“下载链接”的“**更新下载**”中，分别下载“脚本”与“资源包”，自行解压到游戏目录。
 
-****
 #### 游戏显示问题
 
 - **PC 平台：**
@@ -237,7 +224,6 @@ export const components = {
 
     - **显示不全：**需要将游戏主程序（.apk）更新到 r3569 或更高版本，并在 `ons.cfg` 配置文件中指定用于将游戏画面左移的手动屏幕偏移量。例如，对于屏幕分辨率为 2400x1080 的 Redmi Note 9 Pro，应添加 `system-offset-x=180`。
 
-****
 #### 游戏没有声音
 
 - **检查静音状态：**查看游戏窗口标题栏是否显示 `[Sound: Off]`。如果是，请按下 <Kbd>Alt</Kbd>+<Kbd>M</Kbd> 取消静音。
@@ -252,7 +238,6 @@ export const components = {
 
 - **兼容性问题：**如果所有方法都无效，则可能是引擎与你的设备存在兼容性问题，暂时无法解决。
 
-****
 #### 游戏内字号过大
 
 - 可以在 `ons.cfg` 配置文件中加入 `font-multiplier` 代码来缩放字号。将代码中所有的 `0.9` 替换为你希望的缩放比例。
@@ -265,14 +250,12 @@ export const components = {
   font-multiplier=b1:0.9,b2:0.9,b3:0.9,b4:0.9,b5:0.9,b6:0.9,b7:0.9,p0:6:0.9,p1:1:0.9,p1:2:0.9,p1:3:0.9,p1:4:0.9,p1:5:0.9,p1:7:0.9,p2:1:0.9,p2:2:0.9,p2:3:0.9,p2:4:0.9,p2:5:0.9,p2:7:0.9,p41:1:0.9,p41:2:0.9,p41:3:0.9,p41:4:0.9,p41:5:0.9,p41:7:0.9,p42:1:0.9,p42:2:0.9,p42:3:0.9,p42:4:0.9,p42:5:0.9,p42:7:0.9
   ```
 
-****
 #### 存档、读档时出现问题
 
 - 可以尝试在游戏的环境设置中选择“初始化游戏”来重置状态。如果问题依旧，可以手动删除存档文件夹来彻底解决。
 
     - **注意：**这将删除所有存档，操作前请先备份。
 
-****
 #### Android 平台运行卡顿
 
 - 目前存在多种可能影响性能的问题，因此建议仔细配置以下选项：
@@ -287,7 +270,6 @@ export const components = {
 
     - **纹理尺寸限制：**通过将支持的纹理尺寸限制设置为低于设备本身支持的值，你可能会在某些场景中获得稍好的性能。请在 `ons.cfg` 配置文件中添加 `texlimit=4096`，其中 4096 是以像素为单位的 2 的幂次方值。
 
-****
 #### Linux 发行版不受支持
 
 - 游戏在 **Wine** 环境下可以完美运行（经测试，Wine 1.7.21 下运行正常）。
@@ -304,7 +286,6 @@ export const components = {
 
     ![](@assets/pages/help/help_read3.webp)
 
-****
 #### 跳过正篇
 
 - 如果已经游玩过《海猫》的正篇剧本（EP1-8），可以在剧本选择界面按“+”键，解锁所有正篇剧本，直接开始阅读番外剧本。
