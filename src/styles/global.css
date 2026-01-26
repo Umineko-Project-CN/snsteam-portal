@@ -73,8 +73,8 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
 
   h4 {
     @apply text-accent flex items-center px-1 py-2 text-lg;
-    @apply before:iconify before:tabler--label-important-filled before:w-3 before:h-3;
-    @apply before:mr-2 before:text-xl;
+    @apply before:iconify before:tabler--label-important-filled before:size-4;
+    @apply before:mr-1 before:text-xl;
   }
 
   h4 ~ h4 {
@@ -84,8 +84,8 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
   h5 {
     @apply flex items-center px-1 py-2;
     @apply font-bold;
-    @apply before:iconify before:tabler--label-important-filled before:w-3 before:h-3;
-    @apply before:mr-2 before:text-xl;
+    @apply before:iconify before:tabler--label-important-filled before:size-4;
+    @apply before:mr-1 before:text-xl;
   }
 
   blockquote {
@@ -106,10 +106,6 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
 
 @view-transition {
   navigation: auto;
-}
-
-hr {
-  @apply my-4 border-t border-white/20;
 }
 
 article > *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
