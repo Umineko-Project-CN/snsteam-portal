@@ -98,7 +98,7 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
 }
 
 article > *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-    margin-x: 1.5em;
+    margin: 1.5em;
 }
 
 @layer base {
