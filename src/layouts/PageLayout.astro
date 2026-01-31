@@ -1,7 +1,7 @@
 ---
-import type { MarkdownHeading, MarkdownLayoutProps } from "astro";
+import type { MarkdownLayoutProps } from "astro";
 import MainLayout from "./MainLayout.astro";
-import Icon from "@components/Icon.astro";
+import TableOfContents from "@components/TableOfContents.astro";
 
 import skyImage from "@assets/common/sky.webp";
 
@@ -16,36 +16,6 @@ const {
   frontmatter: { title, description, image, toc = "on" },
   headings,
 } = Astro.props;
-
-type TocItem = {
-  text: string;
-  slug: string;
-  children: TocItem[];
-};
-
-const buildTocTree = (headings: MarkdownHeading[]): TocItem[] => {
-  const result: TocItem[] = [];
-  const stack: { item: TocItem; depth: number }[] = [];
-  for (const heading of headings) {
-    const item: TocItem = {
-      text: heading.text,
-      slug: heading.slug,
-      children: [],
-    };
-    while (stack.length > 0 && stack[stack.length - 1].depth >= heading.depth) {
-      stack.pop();
-    }
-    if (stack.length === 0) {
-      result.push(item);
-    } else {
-      stack[stack.length - 1].item.children.push(item);
-    }
-    stack.push({ item, depth: heading.depth });
-  }
-  return result;
-};
-
-const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
 ---
 
 <MainLayout title={title} description={description} image={image}>
@@ -57,69 +27,17 @@ const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
     style={`--bg-image: url('${skyImage.src}')`}
   >
   </div>
-  <div id="main" class="container flex flex-col gap-8 py-16 md:flex-row">
+  <div class="container flex flex-col gap-8 py-8 md:flex-row">
     {
       toc === "on" && headings.length > 0 && (
         <aside class="flex-shrink-0 md:w-64 lg:w-72">
-          <div
-            class:list={[
-              "sticky top-20 max-h-[calc(100dvh-6rem)] overflow-y-auto p-4",
-              "bg-base-200 rounded-box border-base-300 border",
-            ]}
-          >
-            <ul class="menu menu-sm">
-              <li class="font-bold">
-                <a href="#main">
-                  <Icon class="tabler--book size-4" />
-                  {title}
-                </a>
-              </li>
-              {(function () {
-                const renderToc = (items: TocItem[]) =>
-                  items.map((item) => {
-                    const id = `toc-${item.slug}`;
-                    const collapseId = `toc-collapse-${item.slug}`;
-
-                    return item.children.length === 0 ? (
-                      <li>
-                        <a href={`#${item.slug}`}>{item.text}</a>
-                      </li>
-                    ) : (
-                      <li class="space-y-0.5">
-                        {/* prettier-ignore */}
-                        <div class="collapse-toggle open" id={id} data-collapse={`#${collapseId}`}>{item.text}<Icon class:list={[
-                              "tabler--chevron-down size-4 justify-self-end",
-                              "collapse-open:rotate-180 transition-[rotate] duration-300",
-                            ]} />
-                        </div>
-                        <ul
-                          id={collapseId}
-                          class="open collapse space-y-0.5 overflow-hidden transition-[height] duration-300"
-                          aria-labelledby={id}
-                        >
-                          {renderToc(item.children)}
-                        </ul>
-                      </li>
-                    );
-                  });
-
-                return renderToc(tocItems);
-              })()}
-            </ul>
-          </div>
+          <TableOfContents {headings} {title} />
         </aside>
       )
     }
     <article
-      class:list={[
-        "prose max-w-none min-w-0 flex-1",
-        "prose-table:min-w-max prose-table:w-full",
-        "prose-ul:ml-[1.2em] prose-ol:ml-[1.2em]",
-      ]}
-      style={{
-        "--tw-prose-links": "var(--color-accent)",
-        "--tw-prose-code": "var(--color-accent)",
-      }}
+      class="prose max-w-none min-w-0 flex-1"
+      style="--tw-prose-links:var(--color-accent);--tw-prose-code:var(--color-accent)"
     >
       <slot />
     </article>
@@ -127,8 +45,6 @@ const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
 </MainLayout>
 
 <script>
-  import "@flyonui/collapse";
-
   function expandAccordionForHash() {
     const hash = window.location.hash;
     if (!hash) return;
@@ -157,6 +73,9 @@ const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
     }
   }
 
-  window.addEventListener("load", expandAccordionForHash);
+  window.addEventListener("load", () => {
+    expandAccordionForHash();
+  });
+
   window.addEventListener("hashchange", expandAccordionForHash);
 </script>
