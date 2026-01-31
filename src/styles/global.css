@@ -91,6 +91,10 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
   blockquote p {
     @apply before:content-none after:content-none;
   }
+
+  kbd {
+    @apply kbd;
+  }
 }
 
 @view-transition {
