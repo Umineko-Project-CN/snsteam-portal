@@ -1,0 +1,97 @@
+---
+import type { MarkdownHeading } from "astro";
+import Icon from "./Icon.astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+  title: string;
+}
+
+const { headings, title } = Astro.props;
+
+type TocItem = {
+  text: string;
+  slug: string;
+  children: TocItem[];
+};
+
+const buildTocTree = (headings: MarkdownHeading[]): TocItem[] => {
+  const result: TocItem[] = [];
+  const stack: { item: TocItem; depth: number }[] = [];
+  for (const heading of headings) {
+    const item: TocItem = {
+      text: heading.text,
+      slug: heading.slug,
+      children: [],
+    };
+    while (stack.length > 0 && stack[stack.length - 1].depth >= heading.depth) {
+      stack.pop();
+    }
+    if (stack.length === 0) {
+      result.push(item);
+    } else {
+      stack[stack.length - 1].item.children.push(item);
+    }
+    stack.push({ item, depth: heading.depth });
+  }
+  return result;
+};
+
+const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
+---
+
+<div
+  class:list={[
+    "sticky top-20 max-h-[calc(100dvh-6rem)] overflow-y-auto",
+    "bg-base-200 rounded-box shadow-sm",
+  ]}
+>
+  <div class="flex items-center gap-2 p-4 text-base font-bold">
+    <Icon class="tabler--list text-primary size-6" />
+    {title}
+  </div>
+
+  <div class="divider px-4"></div>
+
+  <ul class="menu menu-sm p-4 pt-2">
+    {
+      (function () {
+        const renderToc = (items: TocItem[]) =>
+          items.map((item) => {
+            const id = `toc-${item.slug}`;
+            const collapseId = `toc-collapse-${item.slug}`;
+
+            return item.children.length === 0 ? (
+              <li>
+                {/* prettier-ignore */}
+                <a href={`#${item.slug}`} class="hover:text-primary">{item.text}</a>
+              </li>
+            ) : (
+              <li class="space-y-0">
+                {/* prettier-ignore */}
+                <div class="collapse-toggle open hover:text-primary" id={id} data-collapse={`#${collapseId}`}>
+                    {item.text}<Icon class:list={[
+                        "tabler--chevron-down justify-self-end",
+                        "collapse-open:rotate-180 transition-[rotate] duration-300",
+                    ]} />
+                  </div>
+                <ul
+                  id={collapseId}
+                  class="open collapse overflow-hidden transition-[height] duration-300"
+                  aria-labelledby={id}
+                >
+                  {renderToc(item.children)}
+                </ul>
+              </li>
+            );
+          });
+
+        return renderToc(tocItems);
+      })()
+    }
+  </ul>
+</div>
+
+<script>
+  import "@flyonui/collapse";
+</script>

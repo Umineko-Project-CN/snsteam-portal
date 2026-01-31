@@ -8,7 +8,7 @@
 @source "../../node_modules/flyonui/index.js";
 
 /* 
-https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowoFm3Ze8-xKTS6o_uJ_d8HM6FG34yoy-QvWfTpTNwttkhq21vXe7rE0Sh0e4cqnm-1I_aQ04JCYo99_XptaheEEHk7ZFhCcPEPlOkDNlnamtGMOONU7MXJqRCrKywVCLdMbjuot3XDRY8wkKiSuGC7qAb_9DbJoiHQDWpcSmjsSwqRAkuduFt9GUTKZboXKbbdF2nrCxmNoRBkmEmtuRTwQ1Mo9P9fYJdZGO382adae1N57EZymVohmIlxCP5v_b9FLryfn05Fu1ViWipMKPlDvy_Ez61M535WE-Ig0QrhbgMs7HHPnXH4Jx162CUi2sYTxGmU23IZ0M73XSTD9PUQz3GA6iDSyq1HfRNqBPMH5Sjvaa8774hNSKY8TttdVqFo3UNLDQfrrHUwDCeZuO4Mrbz8wdBwqqBVk996Gl0ExyywUELzsevI5Z-_wCs80Sp
+https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoARWFvQ_W6kioY0KzbsncfxaTayo_uJ_d8nHsPEH4yowbI3rN50AbONjtkje2ty31zgii0yp1DNc-X-lF5yCkhQbHnvjm9FvULIoi8PTJsw7AqzRRbhqSZxpoJzHTjxL7f6PSg3NcNqXhAMKkEqiUuaALduYZEO1sPgWq3xqWIxqKoESW4SMI7a7lsIgViZY0FF9ttqmnuwhVXNgyDBMOs2pNPDW5gnpzq7ydIIju7xE1p09mbzmMYykUIQ7Gsqkfyf_H9HFJ5v94ci_ayRLSUmNEyAf-vw6dyRpuPtUMVO9QScRHeRop96ozBOevWh1EurjViFRZS7shnh3aq1bMPr6mHZooNqINhK3Ua-jbUCeYPytFetrzX37A1IpjxO211WoWjdS0sNB8vsdTCOJ2uxnFlrPbXb4GEVQudmvuQaXIzHLLRQQfOxw8jln7_ACleQqI
 */
 @plugin "flyonui/theme" {
   name: "umineko";
@@ -18,7 +18,7 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
   --color-base-100: oklch(37% 0 0);
   --color-base-200: oklch(26% 0 0);
   --color-base-300: oklch(20% 0 0);
-  --color-base-content: oklch(96% 0.007 247.896);
+  --color-base-content: oklch(87% 0 0);
   --color-primary: oklch(65% 0.068 79.31);
   --color-primary-content: oklch(100% 0 0);
   --color-secondary: oklch(48% 0.0837 10.3);
@@ -102,15 +102,16 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoABWFvQ_W6mlowo
 }
 
 article > *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-    margin: 1.5em;
+  margin: 1.5em;
 }
 
 @layer base {
   table {
-    @apply my-0; 
-    border-collapse: collapse; 
+    @apply my-0;
+    border-collapse: collapse;
   }
-  th, td {
+  th,
+  td {
     @apply py-0;
   }
 }
