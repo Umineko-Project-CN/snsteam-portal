@@ -53,7 +53,14 @@ const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
 
   <div class="divider px-4"></div>
 
-  <ul class="menu menu-sm p-4 pt-2">
+  <ul
+    class="menu menu-sm p-4 pt-2"
+    style={{
+      "--menu-hover-fg": "var(--color-primary)",
+      "--menu-hover-bg":
+        "color-mix(in oklab,var(--color-primary) 5%,transparent)",
+    }}
+  >
     {
       (function () {
         const renderToc = (items: TocItem[]) =>
@@ -63,13 +70,12 @@ const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
 
             return item.children.length === 0 ? (
               <li>
-                {/* prettier-ignore */}
-                <a href={`#${item.slug}`} class="hover:text-primary">{item.text}</a>
+                <a href={`#${item.slug}`}>{item.text}</a>
               </li>
             ) : (
               <li class="space-y-0">
                 {/* prettier-ignore */}
-                <div class="collapse-toggle open hover:text-primary" id={id} data-collapse={`#${collapseId}`}>
+                <div class="collapse-toggle open" id={id} data-collapse={`#${collapseId}`}>
                     {item.text}<Icon class:list={[
                         "tabler--chevron-down justify-self-end",
                         "collapse-open:rotate-180 transition-[rotate] duration-300",
