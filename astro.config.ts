@@ -17,7 +17,6 @@ export default defineConfig({
     plugins: [
       tailwindcss(),
       visualizer({
-        emitFile: true,
         filename: "stats.html",
       }),
     ],
