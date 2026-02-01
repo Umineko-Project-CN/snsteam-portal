@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import cloudflare from "@astrojs/cloudflare";
 import { visualizer } from "rollup-plugin-visualizer";
 import type { Root as HastRoot, Element as HastElement } from "hast";
 import type { Root as MdastRoot } from "mdast";
@@ -11,6 +12,7 @@ import remarkCjkFriendly from "remark-cjk-friendly";
 // https://astro.build/config
 export default defineConfig({
   site: "https://snsteam.club",
+
   vite: {
     plugins: [
       tailwindcss(),
@@ -20,19 +22,24 @@ export default defineConfig({
       }),
     ],
   },
+
   image: {
     layout: "constrained",
   },
+
   markdown: {
     remarkPlugins: [setDefaultLayout, remarkCjkFriendly],
     rehypePlugins: [rehypeTableWrapper],
   },
+
   integrations: [
     mdx({
       shikiConfig: { theme: "dark-plus" },
     }),
     sitemap(),
   ],
+
+  adapter: cloudflare(),
 });
 
 function setDefaultLayout() {
