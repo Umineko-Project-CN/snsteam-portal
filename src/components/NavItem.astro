@@ -1,0 +1,18 @@
+---
+interface Props {
+  href: string;
+  class?: string;
+}
+
+const { href, class: className } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class:list={[
+      "rounded-box flex px-4 font-bold md:w-22 md:justify-center",
+      className,
+    ]}><slot /></a
+  >
+</li>

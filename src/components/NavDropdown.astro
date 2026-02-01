@@ -1,0 +1,61 @@
+---
+import Icon from "@components/Icon.astro";
+
+interface Props {
+  id: string;
+  title: string;
+  items: {
+    label: string;
+    href: string;
+  }[];
+}
+
+const { id, title, items } = Astro.props;
+---
+
+<li
+  class="dropdown relative inline-flex"
+  style="--auto-close:inside;--offset:10;--placement:bottom-end"
+>
+  <button
+    id={id}
+    type="button"
+    class:list={[
+      "dropdown-toggle group/item relative px-4 md:w-22",
+      "rounded-box justify-between font-bold duration-500 md:justify-center",
+      "dropdown-open:bg-(--menu-hover-bg) dropdown-open:text-(--menu-hover-fg)",
+    ]}
+    aria-haspopup="menu"
+    aria-expanded="false"
+    aria-label="Dropdown"
+  >
+    <span
+      class:list={[
+        "md:dropdown-open:-translate-x-3 md:group-hover/item:-translate-x-3",
+        "transition-transform duration-300",
+      ]}>{title}</span
+    >
+    <Icon
+      class:list={[
+        "tabler--chevron-down size-3.5 opacity-60 transition-all duration-300",
+        "dropdown-open:opacity-60 dropdown-open:rotate-180",
+        "md:absolute md:right-3 md:opacity-0 md:group-hover/item:opacity-60",
+      ]}
+    />
+  </button>
+  <ul
+    class="dropdown-menu dropdown-open:opacity-100 hidden min-w-35"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby={id}
+  >
+    {
+      items.map((item) => (
+        <li>
+          {/* prettier-ignore */}
+          <a class="dropdown-item" href={item.href}>{item.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</li>
