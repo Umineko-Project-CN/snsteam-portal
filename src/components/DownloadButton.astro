@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import { mixColor } from "motion";
 
 interface Props {
   class?: string;
@@ -10,18 +11,19 @@ const { class: className, link } = Astro.props;
 
 const url = new URL(link);
 
-const color =
-  {
-    "pan.baidu.com": "#06a7ff",
-    "pan.quark.cn": "#1256ff",
-    "cloud.189.cn": "#fb9312",
-    "mega.nz": "#dd1405",
-  }[url.hostname] || "var(--color-accent)";
+const brandColor = {
+  "pan.baidu.com": "#06a7ff",
+  "pan.quark.cn": "#1256ff",
+  "cloud.189.cn": "#fb9312",
+  "mega.nz": "#dd1405",
+}[url.hostname];
+
+const color = brandColor ? mixColor(brandColor, "#fff")(0.1) : "#e8c17a";
 ---
 
 <a
-  class:list={["btn rounded-xl min-h-fit", className]}
-  style={`--btn-color:${color};--btn-fg:white`}
+  class:list={["btn btn-soft btn-lg min-h-fit rounded-xl", className]}
+  style={{ "--btn-color": color }}
   href={link}
 >
   <Icon class="tabler--download" />
