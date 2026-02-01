@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/sitemap": "^3.6.1",
     "@tsparticles/slim": "^3.9.1",
@@ -35,7 +36,8 @@
     "remark-cjk-friendly": "^2.0.0",
     "rollup-plugin-visualizer": "^6.0.5",
     "tailwindcss": "^4.1.18",
-    "typescript-eslint": "^8.53.0"
+    "typescript-eslint": "^8.53.0",
+    "wrangler": "^4.61.1"
   },
   "prettier": {
     "tailwindFunctions": [
