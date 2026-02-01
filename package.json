@@ -32,7 +32,7 @@
     "globals": "^17.0.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "remark-cjk-friendly": "^1.2.3",
+    "remark-cjk-friendly": "^2.0.0",
     "rollup-plugin-visualizer": "^6.0.5",
     "tailwindcss": "^4.1.18",
     "typescript-eslint": "^8.53.0"
