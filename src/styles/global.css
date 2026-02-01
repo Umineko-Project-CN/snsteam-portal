@@ -59,6 +59,12 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoARWFvQ_W6kioY0
 }
 
 @utility prose {
+  h2,
+  h3,
+  h4 {
+    @apply -mx-6;
+  }
+
   h2 {
     @apply px-6 py-4 tracking-wider;
     @apply text-primary-content rounded-xl shadow-md;
@@ -74,7 +80,7 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoARWFvQ_W6kioY0
   h4 {
     @apply text-accent flex items-center px-1 py-2 text-lg;
     @apply before:iconify before:tabler--label-important-filled before:size-4;
-    @apply before:mr-1 before:text-xl;
+    @apply before:mr-2 before:-ml-1 before:text-xl;
   }
 
   blockquote {
@@ -99,19 +105,4 @@ https://daisyui.com/theme-generator/#theme=eJyVlOFugyAUhV-FmCzZkkoARWFvQ_W6kioY0
 
 @view-transition {
   navigation: auto;
-}
-
-article > *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
-  margin: 1.5em;
-}
-
-@layer base {
-  table {
-    @apply my-0;
-    border-collapse: collapse;
-  }
-  th,
-  td {
-    @apply py-0;
-  }
 }
