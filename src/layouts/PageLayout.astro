@@ -43,39 +43,3 @@ const {
     </article>
   </div>
 </MainLayout>
-
-<script>
-  function expandAccordionForHash() {
-    const hash = window.location.hash;
-    if (!hash) return;
-
-    const targetId = decodeURIComponent(hash.substring(1));
-    const target = document.getElementById(targetId);
-    if (!target) return;
-
-    const accordionItem = target.closest(".accordion-item");
-    if (accordionItem) {
-      const toggle =
-        accordionItem.querySelector<HTMLElement>(".accordion-toggle")!;
-      const content =
-        accordionItem.querySelector<HTMLElement>(".accordion-content")!;
-
-      if (
-        !accordionItem.classList.contains("active") ||
-        content.classList.contains("hidden")
-      ) {
-        toggle.click();
-
-        setTimeout(() => {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 300);
-      }
-    }
-  }
-
-  window.addEventListener("load", () => {
-    expandAccordionForHash();
-  });
-
-  window.addEventListener("hashchange", expandAccordionForHash);
-</script>

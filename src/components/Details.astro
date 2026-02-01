@@ -1,0 +1,57 @@
+---
+import Icon from "@components/Icon.astro";
+
+interface Props {
+  title: string;
+  active?: boolean;
+  class?: string;
+}
+
+const { title, active, class: className } = Astro.props;
+---
+
+<details
+  class:list={["group border-b border-white/10", className]}
+  open={active}
+>
+  <summary
+    class:list={[
+      "flex cursor-pointer items-center gap-2 py-4 transition-colors select-none",
+      "hover:text-primary",
+    ]}
+  >
+    <Icon
+      class:list={[
+        "tabler--chevron-right size-5",
+        "transition-transform duration-300 group-open:rotate-90",
+      ]}
+    />
+    {title}
+  </summary>
+  <div class="pb-4 pl-7 text-sm leading-relaxed text-white/70">
+    <slot />
+  </div>
+</details>
+
+<style>
+  @supports (interpolate-size: allow-keywords) {
+    details {
+      interpolate-size: allow-keywords;
+    }
+
+    details::details-content {
+      opacity: 0;
+      block-size: 0;
+      overflow-y: hidden;
+      transition:
+        content-visibility 0.3s allow-discrete,
+        opacity 0.3s,
+        block-size 0.3s;
+    }
+
+    details[open]::details-content {
+      opacity: 1;
+      block-size: auto;
+    }
+  }
+</style>
