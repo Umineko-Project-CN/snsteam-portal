@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/sitemap": "^3.7.0",
     "@tsparticles/slim": "^3.9.1",
     "astro": "5.17.2",
     "flyonui": "^2.4.1",
