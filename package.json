@@ -29,7 +29,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
-    "globals": "^17.0.0",
+    "globals": "^17.3.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "remark-cjk-friendly": "^2.0.0",
