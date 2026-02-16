@@ -19,7 +19,7 @@
     "astro": "5.17.2",
     "flyonui": "^2.4.1",
     "motion": "^12.26.2",
-    "swiper": "^12.0.3"
+    "swiper": "^12.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
