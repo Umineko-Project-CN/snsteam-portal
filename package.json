@@ -22,7 +22,7 @@
     "swiper": "^12.0.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "@iconify-json/tabler": "^1.2.26",
     "@iconify/tailwind4": "^1.2.1",
     "@tailwindcss/typography": "^0.5.19",
