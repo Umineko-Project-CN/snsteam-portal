@@ -20,6 +20,13 @@ Windows 7 平台用户更新失败并提示 `System.IO.FileNotFoundException`，
 
 其他情况更新失败，可从“下载链接”的“**更新下载**”中，分别下载“脚本”与“资源包”，自行解压到游戏目录。
 
+### 游戏启动失败
+
+若启动游戏时提示 `Invalid launch directory!`，则游戏引擎无法确定游戏资源文件路径，导致游戏启动失败。
+
+- 请先确保游戏文件已经正确解压，检查游戏目录下是否存在 `onscripter-ru.exe`、`ons.cfg` 等必要文件。
+- 游戏在某些移动设备上可能无法确认资源文件的位置，请在移动设备 SD 卡的 `ONScripter-RU` 文件夹中创建 `default.cfg` 文件，并添加一行 `root=[完整游戏路径]`（一般是 `root=/storage/emulated/0/ONScripter-RU`），再尝试启动游戏。
+
 ### 游戏显示问题
 
 **PC 平台：**
