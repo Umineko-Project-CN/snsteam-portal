@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@iconify-json/tabler": "^1.2.30",
+    "@iconify-json/tabler": "^1.2.31",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.1",
@@ -35,7 +35,7 @@
     "remark-cjk-friendly": "^2.0.1",
     "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^4.2.1",
-    "typescript-eslint": "^8.56.1"
+    "typescript-eslint": "^8.57.0"
   },
   "prettier": {
     "tailwindFunctions": [
