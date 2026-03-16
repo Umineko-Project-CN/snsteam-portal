@@ -1,10 +1,10 @@
 @import "tailwindcss";
+@import "../../node_modules/flyonui/variants.css";
 @plugin "@tailwindcss/typography";
 @plugin "@iconify/tailwind4" {
   prefixes: tabler;
 }
 @plugin "flyonui";
-@import "../../node_modules/flyonui/variants.css";
 @source "../../node_modules/flyonui/index.js";
 
 /* 
