@@ -12,13 +12,13 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.7",
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/sitemap": "^3.7.1",
     "@tsparticles/slim": "^3.9.1",
     "astro": "5.18.0",
     "flyonui": "^2.4.1",
-    "motion": "^12.35.1",
+    "motion": "^12.36.0",
     "swiper": "^12.1.2"
   },
   "devDependencies": {
