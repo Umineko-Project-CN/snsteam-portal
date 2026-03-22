@@ -1,10 +1,8 @@
 # SNSTeam Portal - 日不落汉化组门户网站
 
-这是一个基于 [Astro](https://astro.build) 框架开发的现代化门户网站。
-
 ## 技术栈
 
-- **框架**: [Astro 5.x](https://astro.build) - 极速的静态网站生成器。
+- **框架**: [Astro 6](https://astro.build) - 极速的静态网站生成器。
 - **样式**: [Tailwind CSS v4](https://tailwindcss.com) - 采用最新的 CSS-first 配置方式。
 - **UI 组件库**: [FlyonUI](https://flyonui.com) - 基于 Tailwind CSS 的组件库。
 - **动画**: [Motion](https://motion.dev) (原 Framer Motion) - 提供高性能的浏览器端动画。
