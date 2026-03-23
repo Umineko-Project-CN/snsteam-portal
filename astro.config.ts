@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { visualizer } from "rollup-plugin-visualizer";
@@ -12,6 +13,7 @@ export default defineConfig({
   site: "https://snsteam.club",
   vite: {
     plugins: [
+      tailwindcss(),
       visualizer({
         filename: "stats.html",
       }),

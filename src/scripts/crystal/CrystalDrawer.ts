@@ -19,7 +19,7 @@ export class CrystalDrawer implements IShapeDrawer<CrystalParticle> {
     drawCrystal(data);
   }
 
-  particleInit(container: Container, particle: CrystalParticle): void {
+  particleInit(_: Container, particle: CrystalParticle): void {
     const shapeData = particle.shapeData as ICrystalData | undefined;
 
     const points = Math.floor(
