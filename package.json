@@ -27,7 +27,7 @@
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
-    "eslint": "^10.1.0",
+    "eslint": "^10.2.0",
     "eslint-plugin-astro": "^1.6.0",
     "globals": "^17.4.0",
     "prettier-plugin-astro": "^0.14.1",
@@ -35,7 +35,7 @@
     "remark-cjk-friendly": "^2.0.1",
     "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^4.2.2",
-    "typescript-eslint": "^8.57.2"
+    "typescript-eslint": "^8.58.0"
   },
   "prettier": {
     "tailwindFunctions": [
