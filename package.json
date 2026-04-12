@@ -28,14 +28,14 @@
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
     "eslint": "^10.2.0",
-    "eslint-plugin-astro": "^1.6.0",
-    "globals": "^17.4.0",
+    "eslint-plugin-astro": "^1.7.0",
+    "globals": "^17.5.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "remark-cjk-friendly": "^2.0.1",
     "rollup-plugin-visualizer": "^7.0.1",
     "tailwindcss": "^4.2.2",
-    "typescript-eslint": "^8.58.0"
+    "typescript-eslint": "^8.58.1"
   },
   "prettier": {
     "tailwindFunctions": [
