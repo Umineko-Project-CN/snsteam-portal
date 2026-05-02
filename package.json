@@ -26,16 +26,16 @@
     "@iconify-json/tabler": "^1.2.33",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.2",
-    "eslint": "^10.2.0",
+    "@tailwindcss/vite": "^4.2.4",
+    "eslint": "^10.3.0",
     "eslint-plugin-astro": "^1.7.0",
-    "globals": "^17.5.0",
+    "globals": "^17.6.0",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "remark-cjk-friendly": "^2.0.1",
     "rollup-plugin-visualizer": "^7.0.1",
-    "tailwindcss": "^4.2.2",
-    "typescript-eslint": "^8.58.1"
+    "tailwindcss": "^4.2.4",
+    "typescript-eslint": "^8.59.1"
   },
   "prettier": {
     "tailwindFunctions": [
