@@ -7,13 +7,15 @@ import type { Root as HastRoot, Element as HastElement } from "hast";
 import type { Root as MdastRoot } from "mdast";
 import { visit } from "unist-util-visit";
 import remarkCjkFriendly from "remark-cjk-friendly";
+import type { Rollup } from "vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://snsteam.club",
   vite: {
     plugins: [
-      tailwindcss(),
+      // Fix type error
+      tailwindcss() as Rollup.Plugin[],
       visualizer({
         filename: "stats.html",
       }),
