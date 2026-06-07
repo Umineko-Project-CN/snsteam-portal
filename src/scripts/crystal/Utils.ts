@@ -66,8 +66,7 @@ export function drawCrystal(data: IShapeDrawData<CrystalParticle>): void {
   const opacity = particle.opacity?.value ?? 0.8;
 
   if (color) {
-    // Since particle.getFillColor() returned IHsl (according to previous error)
-    gradient.addColorStop(0, getStyleFromHsl(color, opacity));
+    gradient.addColorStop(0, getStyleFromHsl(color, false, opacity));
 
     // Darker version for the gradient end
     const darkerHsl = {
@@ -75,7 +74,7 @@ export function drawCrystal(data: IShapeDrawData<CrystalParticle>): void {
       s: color.s,
       l: Math.max(0, color.l - 20),
     };
-    gradient.addColorStop(1, getStyleFromHsl(darkerHsl, opacity * 0.5));
+    gradient.addColorStop(1, getStyleFromHsl(darkerHsl, false, opacity * 0.5));
   }
 
   context.fillStyle = gradient;

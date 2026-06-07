@@ -26,12 +26,17 @@ async function setupTsParticles(
       detectRetina: true,
       fpsLimit: 60,
       particles: {
-        color: {
-          value: [
-            "rgba(226, 232, 240, 0.15)",
-            "rgba(129, 140, 248, 0.1)",
-            "rgba(216, 180, 254, 0.08)",
-          ],
+        paint: {
+          fill: {
+            enable: true,
+            color: {
+              value: [
+                "rgb(226, 232, 240)",
+                "rgb(129, 140, 248)",
+                "rgb(216, 180, 254)",
+              ],
+            },
+          },
         },
         move: {
           enable: true,
@@ -43,7 +48,7 @@ async function setupTsParticles(
           density: { enable: true, width: 1920, height: 1080 },
         },
         opacity: {
-          value: { min: 0.05, max: 0.25 },
+          value: { min: 0.22, max: 0.5 },
           animation: {
             enable: true,
             speed: { min: 0.5, max: 1 },
@@ -67,7 +72,10 @@ async function setupTsParticles(
   });
 
   // Add custom crystal shape
-  await tsParticles.addShape(new CrystalDrawer(), true);
+  tsParticles.pluginManager.addShape(
+    ["crystal"],
+    async () => new CrystalDrawer(),
+  );
 
   await tsParticles.load({
     element: crystalContainer,
@@ -76,14 +84,19 @@ async function setupTsParticles(
       detectRetina: true,
       fpsLimit: 60,
       particles: {
-        color: {
-          value: [
-            "rgba(226, 232, 240, 0.3)",
-            "rgba(129, 140, 248, 0.25)",
-            "rgba(216, 180, 254, 0.2)",
-            "rgba(255, 255, 255, 0.3)",
-            "rgba(191, 219, 254, 0.2)",
-          ],
+        paint: {
+          fill: {
+            enable: true,
+            color: {
+              value: [
+                "rgb(226, 232, 240)",
+                "rgb(129, 140, 248)",
+                "rgb(216, 180, 254)",
+                "rgb(255, 255, 255)",
+                "rgb(191, 219, 254)",
+              ],
+            },
+          },
         },
         move: {
           enable: true,
