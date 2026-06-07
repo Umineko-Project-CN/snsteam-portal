@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -25,8 +26,10 @@ export default defineConfig({
     layout: "constrained",
   },
   markdown: {
-    remarkPlugins: [setDefaultLayout, remarkCjkFriendly],
-    rehypePlugins: [rehypeTableWrapper],
+    processor: unified({
+      remarkPlugins: [setDefaultLayout, remarkCjkFriendly],
+      rehypePlugins: [rehypeTableWrapper],
+    }),
   },
   integrations: [
     mdx({
