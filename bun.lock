@@ -11,7 +11,7 @@
         "astro": "6.4.4",
         "flyonui": "^2.4.1",
         "motion": "^12.40.0",
-        "swiper": "^12.2.0",
+        "swiper": "^14.0.1",
       },
       "devDependencies": {
         "@eslint/js": "^10.0.1",
@@ -1179,7 +1179,7 @@
 
     "svgo": ["svgo@4.0.1", "https://registry.npmmirror.com/svgo/-/svgo-4.0.1.tgz", { "dependencies": { "commander": "^11.1.0", "css-select": "^5.1.0", "css-tree": "^3.0.1", "css-what": "^6.1.0", "csso": "^5.0.5", "picocolors": "^1.1.1", "sax": "^1.5.0" }, "bin": "./bin/svgo.js" }, "sha512-XDpWUOPC6FEibaLzjfe0ucaV0YrOjYotGJO1WpF0Zd+n6ZGEQUsSugaoLq9QkEZtAfQIxT42UChcssDVPP3+/w=="],
 
-    "swiper": ["swiper@12.2.0", "https://registry.npmmirror.com/swiper/-/swiper-12.2.0.tgz", {}, "sha512-K8uXsBZU6ME97Ia3xbBge8IRCnR1lOmIILzvY/jGVic7dSTQ530s3uO8RvXbPUtkkXLWIwmZLRPbtDxRWVAFdg=="],
+    "swiper": ["swiper@14.0.1", "", {}, "sha512-dibQY282S5rn6S9Ba+GTIvofyY4Qujy526a0cPaJnjR2S18Z7HMGKZBr8k/3ukboeKW/ig5h0q//7CYip0MCQw=="],
 
     "synckit": ["synckit@0.11.11", "https://registry.npmmirror.com/synckit/-/synckit-0.11.11.tgz", { "dependencies": { "@pkgr/core": "^0.2.9" } }, "sha512-MeQTA1r0litLUf0Rp/iisCaL8761lKAZHaimlbGK4j0HysC4PLfqygQj9srcs0m2RdtDYnF8UuYyKpbjHYp7Jw=="],
 
