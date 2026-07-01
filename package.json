@@ -25,18 +25,18 @@
     "@eslint/js": "^10.0.1",
     "@iconify-json/tabler": "^1.2.35",
     "@iconify/tailwind4": "^1.2.3",
-    "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.3.0",
-    "eslint": "^10.4.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.2",
+    "eslint": "^10.6.0",
     "eslint-plugin-astro": "^1.7.0",
-    "globals": "^17.6.0",
-    "prettier": "^3.8.3",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "remark-cjk-friendly": "^2.0.1",
+    "remark-cjk-friendly": "^2.3.1",
     "rollup-plugin-visualizer": "^7.0.1",
-    "tailwindcss": "^4.3.0",
-    "typescript-eslint": "^8.60.1"
+    "tailwindcss": "^4.3.2",
+    "typescript-eslint": "^8.62.1"
   },
   "prettier": {
     "tailwindFunctions": [
