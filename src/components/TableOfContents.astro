@@ -74,13 +74,19 @@ const tocItems = buildTocTree(headings.filter((h) => h.depth > 1));
               </li>
             ) : (
               <li class="space-y-0">
-                {/* prettier-ignore */}
-                <div class="collapse-toggle open" id={id} data-collapse={`#${collapseId}`}>
-                    {item.text}<Icon class:list={[
-                        "tabler--chevron-down justify-self-end",
-                        "collapse-open:rotate-180 transition-[rotate] duration-300",
-                    ]} />
-                  </div>
+                <div
+                  class="collapse-toggle open"
+                  id={id}
+                  data-collapse={`#${collapseId}`}
+                >
+                  {item.text}
+                  <Icon
+                    class:list={[
+                      "tabler--chevron-down justify-self-end",
+                      "collapse-open:rotate-180 transition-[rotate] duration-300",
+                    ]}
+                  />
+                </div>
                 <ul
                   id={collapseId}
                   class="open collapse overflow-hidden transition-[height] duration-300"

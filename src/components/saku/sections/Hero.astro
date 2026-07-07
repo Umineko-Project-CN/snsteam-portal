@@ -71,13 +71,16 @@ const buttonItems = [
             <Icon
               class:list={["square:text-[1.4em] text-[1.2em]", item.icon]}
             />
-            {/* prettier-ignore */}
             <div>
               <span class="tracking-[0.2em]">{item.title}</span>
-              <span class:list={[
+              <span
+                class:list={[
                   "hidden text-[0.5em] font-semibold tracking-[0.15em]",
                   "square:block wide:inline",
-                ]}>{item.subtitle}</span>
+                ]}
+              >
+                {item.subtitle}
+              </span>
             </div>
           </a>
         ))
