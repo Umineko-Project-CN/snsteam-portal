@@ -52,8 +52,9 @@ const { id, title, items } = Astro.props;
     {
       items.map((item) => (
         <li>
-          {/* prettier-ignore */}
-          <a class="dropdown-item" href={item.href}>{item.label}</a>
+          <a class="dropdown-item" href={item.href}>
+            {item.label}
+          </a>
         </li>
       ))
     }
