@@ -19,7 +19,7 @@
     "@tsparticles/slim": "^4.3.1",
     "astro": "7.0.6",
     "flyonui": "^2.4.1",
-    "motion": "^12.42.2",
+    "motion": "^13.1.1",
     "swiper": "^14.0.1"
   },
   "devDependencies": {
