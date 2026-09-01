@@ -24,20 +24,20 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@iconify-json/tabler": "^1.2.35",
+    "@iconify-json/tabler": "^1.2.38",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.2",
-    "eslint": "^10.6.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "eslint": "^10.9.1",
     "eslint-plugin-astro": "^2.1.1",
-    "globals": "^17.7.0",
-    "prettier": "^3.9.4",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "remark-cjk-friendly": "^2.3.1",
-    "rollup-plugin-visualizer": "^7.0.1",
-    "tailwindcss": "^4.3.2",
-    "typescript-eslint": "^8.62.1"
+    "rollup-plugin-visualizer": "^7.1.1",
+    "tailwindcss": "^4.3.3",
+    "typescript-eslint": "^8.68.0"
   },
   "prettier": {
     "tailwindFunctions": [
