@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
-    "@astrojs/markdown-remark": "^7.3.0",
+    "@astrojs/markdown-remark": "^7.3.1",
     "@astrojs/mdx": "7.0.2",
     "@astrojs/sitemap": "3.7.4",
     "@tsparticles/slim": "^4.4.0",
-    "astro": "7.2.10",
+    "astro": "7.3.5",
     "flyonui": "^2.4.1",
-    "motion": "^13.1.1",
-    "swiper": "^14.2.0"
+    "motion": "^13.4.4",
+    "swiper": "^14.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
