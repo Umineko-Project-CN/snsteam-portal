@@ -1,0 +1,4 @@
+# Prettier's markdown parser reformats JSX inside MDX (re-indents elements inside
+# list items and block quotes), producing files the MDX compiler rejects with
+# "Expected the closing tag". No JSX-aware MDX formatter is currently available.
+*.mdx
