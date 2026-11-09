@@ -18,6 +18,12 @@ async function setupTsParticles(
   // Load tsparticles
   await loadSlim(tsParticles);
 
+  // Add custom crystal shape
+  tsParticles.pluginManager.addShape(
+    ["crystal"],
+    async () => new CrystalDrawer(),
+  );
+
   // Load dust particles
   await tsParticles.load({
     element: dustContainer,
@@ -70,12 +76,6 @@ async function setupTsParticles(
       },
     },
   });
-
-  // Add custom crystal shape
-  tsParticles.pluginManager.addShape(
-    ["crystal"],
-    async () => new CrystalDrawer(),
-  );
 
   await tsParticles.load({
     element: crystalContainer,
